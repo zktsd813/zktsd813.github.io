@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Igjae Kim</title>
+  <meta name="description" content="Igjae Kim, Ph.D. student at KAIST working on CXL memory systems and infrastructure for LLM agents.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%232b59c3'/%3E%3Ctext x='32' y='42' font-family='Arial,sans-serif' font-size='28' font-weight='700' fill='white' text-anchor='middle'%3EIK%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- TODO: fill in Google Scholar / GitHub links and add assets/cv.pdf -->
+  <style>
+    :root {
+      --bg: #fff; --text: #1d2026; --muted: #6b7280; --line: #e8e8e8; --accent: #2b59c3;
+      --cxl: #234a9e; --agent: #5c7a29; --award: #9a6a00;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #121417; --text: #e6e8ec; --muted: #9aa3b2; --line: #262a31; --accent: #7a9cf0;
+        --cxl: #8fb0ff; --agent: #a8c46a; --award: #e3b54f;
+      }
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0; background: var(--bg); color: var(--text);
+      font: 16px/1.65 "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    main { max-width: 760px; margin: 0 auto; padding: 72px 24px 48px; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; text-underline-offset: 3px; }
+    b, strong { font-weight: 600; }
+    ul { list-style: none; margin: 0; padding: 0; }
+
+    /* header */
+    h1 { margin: 0; font-size: 36px; font-weight: 600; letter-spacing: -0.02em; }
+    .role { margin: 6px 0 0; color: var(--muted); }
+    .links { display: flex; flex-wrap: wrap; margin: 14px 0 0; font-size: 15px; }
+    .links a + a::before { content: "·"; color: var(--muted); margin: 0 9px; display: inline-block; }
+
+    /* sections */
+    h2 {
+      margin: 52px 0 18px; padding-bottom: 8px; border-bottom: 1px solid var(--line);
+      font-size: 24px; font-weight: 500; letter-spacing: -0.01em;
+    }
+    h3 { margin: 24px 0 10px; font-size: 17px; font-weight: 600; }
+    p { margin: 0 0 12px; }
+    .c-cxl { color: var(--cxl); }
+    .c-agent { color: var(--agent); }
+
+    /* research interests */
+    .area { margin: 0 0 14px; }
+    .area-title { font-weight: 600; }
+    .sub { margin-top: 4px; padding-left: 14px; border-left: 2px solid var(--line); }
+    .sub li { padding: 2px 0; font-size: 15.5px; }
+    .cxl-area .area-title { color: var(--cxl); }
+    .cxl-area .sub { border-left-color: var(--cxl); }
+    .agent-area .area-title { color: var(--agent); }
+    .agent-area .sub { border-left-color: var(--agent); }
+    .ref { font-size: 13.5px; margin-left: 8px; }
+
+    /* publications */
+    .pubs li { padding: 12px 0; }
+    .pub-title { font-weight: 600; line-height: 1.5; }
+    .pub-link { font-weight: 400; font-size: 15px; margin-left: 6px; white-space: nowrap; }
+    .pub-venue { font-size: 15px; font-weight: 500; margin-top: 2px; }
+    .pub-authors { font-size: 15px; color: var(--muted); }
+    .pub-authors strong { color: var(--text); font-weight: 700; }
+    .badge { font-size: 13.5px; font-weight: 700; color: var(--award); margin-left: 6px; white-space: nowrap; }
+    .tag { font-size: 11px; font-weight: 600; border: 1px solid currentColor; border-radius: 4px; padding: 0 5px; margin-left: 6px; vertical-align: 1px; white-space: nowrap; }
+    .tag.cxl { color: var(--cxl); }
+    .tag.ai { color: var(--agent); }
+    .tag.sec { color: var(--muted); }
+
+    /* entries (education / experience) */
+    .entry { padding: 8px 0 12px; }
+    .entry-head, .entry-sub { display: flex; justify-content: space-between; gap: 16px; }
+    .entry-title { font-weight: 600; }
+    .entry-date, .entry-place { flex: none; color: var(--muted); font-size: 14.5px; white-space: nowrap; }
+    .entry-role { font-size: 15.5px; }
+    .bullets { list-style: disc; padding-left: 20px; margin-top: 4px; }
+    .bullets li { font-size: 15.5px; padding: 1px 0; }
+
+    /* simple rows (awards / teaching) */
+    .rows li { display: flex; justify-content: space-between; gap: 16px; padding: 5px 0; font-size: 15.5px; }
+    .rows .y { flex: none; color: var(--muted); font-size: 14.5px; white-space: nowrap; }
+
+    footer { margin-top: 64px; padding-top: 20px; border-top: 1px solid var(--line); color: var(--muted); font-size: 14px; }
+
+    @media (max-width: 600px) {
+      main { padding-top: 48px; }
+      h1 { font-size: 30px; }
+      h2 { font-size: 22px; }
+      .entry-head, .entry-sub, .rows li { flex-direction: column; gap: 0; }
+    }
+  </style>
+</head>
+<body>
+<main>
+
+  <header>
+    <h1>Igjae Kim</h1>
+    <p class="role">Ph.D. Student, School of Computing, KAIST &middot; <a href="https://casyslab.kaist.ac.kr/">CASYS Lab</a></p>
+    <p class="links">
+      <a href="mailto:ijkim@kaist.ac.kr">ijkim@kaist.ac.kr</a>
+      <a href="#">Google Scholar</a><!-- TODO -->
+      <a href="#">GitHub</a><!-- TODO -->
+      <a href="assets/cv.pdf">CV</a><!-- TODO -->
+    </p>
+  </header>
+
+  <!-- ===================== ABOUT ===================== -->
+  <h2 id="about">About</h2>
+  <p>
+    I am a Ph.D. student in the <a href="https://cs.kaist.ac.kr/">School of Computing at KAIST</a>, advised by
+    Prof. <a href="https://jaehyuk-huh.github.io/">Jaehyuk Huh</a> at the
+    <a href="https://casyslab.kaist.ac.kr/">Computer Architecture and Systems Lab (CASYS)</a>.
+    My research focuses on system software for memory systems, particularly
+    <b class="c-cxl">CXL-based memory pooling and tiered memory</b>. I am also building
+    <b class="c-agent">infrastructure for LLM agents</b>, with a focus on scalable and resource-efficient agent sandboxes.
+  </p>
+
+  <h3>Research Interests</h3>
+  <div class="area cxl-area">
+    <div class="area-title">CXL Memory Systems</div>
+    <ul class="sub">
+      <li>Memory pooling for serverless</li>
+      <li>Tiered memory management<a class="ref" href="#hpca27">HPCA '27</a><a class="ref" href="#arxiv25">arXiv '25</a></li>
+      <li>Access-pattern protection for CXL memory<a class="ref" href="#taco25">TACO '25</a></li>
+      <li>Huge-page management for disaggregated memory</li>
+    </ul>
+  </div>
+  <div class="area agent-area">
+    <div class="area-title">AI Systems</div>
+    <ul class="sub">
+      <li>Scalable, resource-efficient sandboxes for LLM agents</li>
+      <li>Interference-aware DNN serving across NPUs and GPUs<a class="ref" href="#iccd24">ICCD '24</a></li>
+    </ul>
+  </div>
+  <div class="area">
+    <div class="area-title">System Security</div>
+    <ul class="sub">
+      <li>Message authentication for SGX-protected key-value stores<a class="ref" href="#fast22">FAST '22</a></li>
+      <li>Confidential computing for shared processing-in-memory<a class="ref" href="#micro26">MICRO '26</a></li>
+    </ul>
+  </div>
+
+  <!-- ===================== PUBLICATIONS ===================== -->
+  <h2 id="publications">Publications</h2>
+  <ul class="pubs">
+    <li id="hpca27">
+      <div class="pub-title">NEST: Multi-Tenant Tiered Memory Management with Near Memory Demand Estimation</div>
+      <div class="pub-venue">IEEE International Symposium on High-Performance Computer Architecture (HPCA), 2027<span class="tag cxl">CXL</span></div>
+      <div class="pub-authors">Kwanghoon Choi, <strong>Igjae Kim</strong>, Hongjin Kim, Suhwan Kim, and Jaehyuk Huh</div>
+    </li>
+    <li id="micro26">
+      <div class="pub-title">SecPIMlet: Confidential Computing for Spatio-temporally Shared Processing-in-Memory</div>
+      <div class="pub-venue">IEEE/ACM International Symposium on Microarchitecture (MICRO), 2026<span class="badge">★ Distinguished Paper</span><span class="tag sec">Security</span></div>
+      <div class="pub-authors">Sunho Lee, Minwoo Noh, Jeongwon Choi, Kwanghoon Choi, <strong>Igjae Kim</strong>, Chang Hyun Park, and Jaehyuk Huh</div>
+    </li>
+    <li id="arxiv25">
+      <div class="pub-title">Adaptive Migration Decision for Multi-Tenant Memory Systems<a class="pub-link" href="https://arxiv.org/abs/2505.09164">[arXiv]</a></div>
+      <div class="pub-venue">arXiv preprint arXiv:2505.09164, 2025<span class="tag cxl">CXL</span></div>
+      <div class="pub-authors">Hyungjun Cho, <strong>Igjae Kim</strong>, Kwanghoon Choi, Hongjin Kim, Wonjae Lee, Junhyeok Im, Jinin So, and Jaehyuk Huh</div>
+    </li>
+    <li id="taco25">
+      <div class="pub-title">ShieldCXL: A Practical Obliviousness Support with Sealed CXL Memory<a class="pub-link" href="https://doi.org/10.1145/3703354">[paper]</a><a class="pub-link" href="https://jaehyuk-huh.github.io/slides/TACO2025_shieldCXL_slide.pdf">[slides]</a></div>
+      <div class="pub-venue">ACM Transactions on Architecture and Code Optimization (TACO), Vol. 22, No. 1, 2025<span class="tag cxl">CXL</span><span class="tag sec">Security</span></div>
+      <div class="pub-authors">Kwanghoon Choi, <strong>Igjae Kim</strong>, Sunho Lee, and Jaehyuk Huh</div>
+    </li>
+    <li id="iccd24">
+      <div class="pub-title">Interference-Aware DNN Serving on Heterogeneous Processors in Edge Systems<a class="pub-link" href="https://jeongseob.github.io/assets/papers/kim_iccd24.pdf">[paper]</a><a class="pub-link" href="https://jaehyuk-huh.github.io/slides/iccd2024_Interference_Aware_Serving.pdf">[slides]</a></div>
+      <div class="pub-venue">IEEE International Conference on Computer Design (ICCD), 2024<span class="tag ai">AI Systems</span></div>
+      <div class="pub-authors">Yeonjae Kim, <strong>Igjae Kim</strong>, Kwanghoon Choi, Jeongseob Ahn, Jongse Park, and Jaehyuk Huh</div>
+    </li>
+    <li id="fast22">
+      <div class="pub-title">A Log-Structured Merge Tree-aware Message Authentication Scheme for Persistent Key-Value Stores<a class="pub-link" href="https://www.usenix.org/conference/fast22/presentation/kim-igjae">[paper]</a><a class="pub-link" href="https://github.com/cssl-unist/tweezer">[code]</a></div>
+      <div class="pub-venue">USENIX Conference on File and Storage Technologies (FAST), 2022<span class="tag sec">Security</span></div>
+      <div class="pub-authors"><strong>Igjae Kim</strong>, J. Hyun Kim, Minu Chung, Hyungon Moon, and Sam H. Noh</div>
+    </li>
+  </ul>
+
+  <!-- ===================== EDUCATION ===================== -->
+  <h2 id="education">Education</h2>
+  <div class="entry">
+    <div class="entry-head"><span class="entry-title">Korea Advanced Institute of Science and Technology (KAIST)</span><span class="entry-date">Sep. 2023 – Present</span></div>
+    <div class="entry-sub"><span class="entry-role">Ph.D. in Computer Science, School of Computing</span><span class="entry-place">Daejeon, Republic of Korea</span></div>
+    <ul class="bullets"><li>Advised by Prof. Jaehyuk Huh</li></ul>
+  </div>
+  <div class="entry">
+    <div class="entry-head"><span class="entry-title">Korea Advanced Institute of Science and Technology (KAIST)</span><span class="entry-date">Sep. 2021 – Aug. 2023</span></div>
+    <div class="entry-sub"><span class="entry-role">M.S. in Computer Science, School of Computing</span><span class="entry-place">Daejeon, Republic of Korea</span></div>
+    <ul class="bullets"><li>Advised by Prof. Jaehyuk Huh</li></ul>
+  </div>
+  <div class="entry">
+    <div class="entry-head"><span class="entry-title">Ulsan National Institute of Science and Technology (UNIST)</span><span class="entry-date">Mar. 2015 – Aug. 2021</span></div>
+    <div class="entry-sub"><span class="entry-role">B.S. in Electrical and Electronic Engineering &amp; Computer Science and Engineering (Double Major)</span><span class="entry-place">Ulsan, Republic of Korea</span></div>
+    <ul class="bullets">
+      <li><strong>Summa Cum Laude</strong></li>
+    </ul>
+  </div>
+
+  <!-- ===================== EXPERIENCE ===================== -->
+  <h2 id="experience">Experience</h2>
+  <div class="entry">
+    <div class="entry-head"><span class="entry-title">CryptoLab Inc.</span><span class="entry-date">Jul. 2021 – Aug. 2021</span></div>
+    <div class="entry-sub"><span class="entry-role">Research Intern</span></div>
+    <ul class="bullets">
+      <li>Implemented CKKS homomorphic encryption and decryption inside an Intel SGX enclave for secure DNN inference</li>
+    </ul>
+  </div>
+  <div class="entry">
+    <div class="entry-head"><span class="entry-title">Ulsan National Institute of Science and Technology (UNIST)</span><span class="entry-date">Spring 2020</span></div>
+    <div class="entry-sub"><span class="entry-role">Undergraduate Research Intern &middot; Advisor: Prof. Hyungon Moon</span></div>
+    <ul class="bullets">
+      <li>Research on secure persistent key-value stores with Intel SGX, which led to <a href="#fast22">FAST '22</a> (first author)</li>
+    </ul>
+  </div>
+
+  <!-- ===================== AWARDS ===================== -->
+  <h2 id="awards">Awards &amp; Honors</h2>
+  <ul class="rows">
+    <li><span><strong>Distinguished Paper</strong>, IEEE/ACM MICRO (SecPIMlet)</span><span class="y">2026</span></li>
+    <li><span><strong>LS Award</strong>, UNIST</span><span class="y">Aug. 2021</span></li>
+    <li><span><strong>Summa Cum Laude</strong>, UNIST</span><span class="y">Aug. 2021</span></li>
+    <li><span><strong>Dean's List</strong>, UNIST (Spring &amp; Fall 2015, Spring 2016, Fall 2019, Spring &amp; Fall 2020)</span><span class="y">2015 – 2020</span></li>
+  </ul>
+
+  <!-- ===================== TEACHING ===================== -->
+  <h2 id="teaching">Teaching Assistant</h2>
+  <ul class="rows">
+    <li><span>System Programming, KAIST</span><span class="y">Fall 2021, 2022, 2023, 2025</span></li>
+    <li><span>Computer Organization, KAIST</span><span class="y">Spring 2025</span></li>
+    <li><span>Parallel Computing (Special Topics in CS), KAIST</span><span class="y">Fall 2024</span></li>
+  </ul>
+
+  <footer>&copy; 2026 Igjae Kim</footer>
+
+</main>
+</body>
+</html>
